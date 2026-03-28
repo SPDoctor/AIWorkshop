@@ -2,11 +2,17 @@
 AI Workshop presented at Adriatics Tech Summit, Sarajevo, 30th March 2026
 
 ## If you want to follow along:
+
 Install Visual Studio Code
+
 Install GitHub Copilot
+
 Optionally install Visual Studio
+
 Install .NET SDK
+
 Get an Azure Trial Account (if you don’t have Azure)
+
 Sign up to ChatGPT
 
 
