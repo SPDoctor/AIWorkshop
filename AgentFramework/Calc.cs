@@ -6,6 +6,24 @@ namespace Plugins;
 
 public class CalcPlugin
 {
+  [Description("Operate on two numbers")]
+  public static double BinaryOp(
+      [Description("The first number to operate on")] double number1,
+      [Description("The second number to operate on")] double number2,
+      [Description("The operation to perform, e.g. add, subtract, multiply, divide")] string operation
+  )
+  {
+    var result = operation.ToLower() switch
+    {
+        "add" => number1 + number2,
+        "subtract" => number1 - number2,
+        "multiply" => number1 * number2,
+        "divide" => number1 / number2,
+        _ => throw new InvalidOperationException("Invalid operation")
+    };
+    return result ;
+  }
+
   [Description("Add two numbers")]
   public static double Add(
       [Description("The first number to add")] double number1,
@@ -48,6 +66,7 @@ public class CalcPlugin
       [Description("The power to raise the number by")] double number2
   )
   {
+   Console.WriteLine($"Plugin: Raising {number1} to the power of {number2}");
       return Math.Pow(number1, number2);
 }
 
@@ -57,7 +76,9 @@ public class CalcPlugin
      [Description("n")] double number2
   )
   {
-      return Math.Pow(number1, 1.0 / number2);
+   var result = Math.Pow(number1, 1.0/number2);
+   Console.WriteLine($"Plugin: Taking the {number2} root of {number1} - result is {result}");
+      return result;
   }
 
   [Description("Take the log of a number")]

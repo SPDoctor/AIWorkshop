@@ -22,19 +22,26 @@ var client = new AzureOpenAIClient(new Uri(endpoint), credential);
 
 var weatherAgent = client.GetChatClient(deploymentName)
   .CreateAIAgent(
-    instructions: "You are a helpful agent giving weather information.",
+    instructions: "You are a helpful agent giving weather information. You always reply in the style of Shakespeare.",
     tools: [AIFunctionFactory.Create(GetWeather)]
   );
 
+
+
 var agent = client.GetChatClient(deploymentName)
   .CreateAIAgent(
-    instructions: "You are a helpful assistant who responds to the user.",
+    instructions: "You are a helpful assistant who responds to the user. If you use the weather tool, always reply in the exact words provided by the tool.",
     tools: [
       weatherAgent.AsAIFunction(),
       AIFunctionFactory.Create(LightPlugin.LightOn),
       AIFunctionFactory.Create(LightPlugin.LightOff),
       AIFunctionFactory.Create(LightPlugin.LightFlash),
-      AIFunctionFactory.Create(CalcPlugin.Root)
+      AIFunctionFactory.Create(CalcPlugin.Power),
+      AIFunctionFactory.Create(CalcPlugin.Root),
+      AIFunctionFactory.Create(ModelsPlugin.Range),
+      AIFunctionFactory.Create(ModelsPlugin.Length),
+      AIFunctionFactory.Create(ModelsPlugin.Name),
+      AIFunctionFactory.Create(ModelsPlugin.Colour)
     ]
   );
 

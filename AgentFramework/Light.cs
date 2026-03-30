@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using Microsoft.SemanticKernel;
 using Busylight;
 using System.ComponentModel.DataAnnotations;
 using System;
