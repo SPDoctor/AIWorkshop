@@ -15,6 +15,10 @@ Get an Azure Trial Account (if you don’t have Azure)
 
 Sign up to ChatGPT
 
+## Slide deck:
+
+https://github.com/SPDoctor/AIWorkshop/blob/main/ATS26_Developing%20Advanced%20AI%20Solutions%20that%20Actually%20Do%20Stuff.pdf
+
 
 ## Resources for the lab:
 
